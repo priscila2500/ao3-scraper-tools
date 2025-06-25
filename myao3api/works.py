@@ -89,11 +89,15 @@ class Work(object):
 
     @property
     def rating(self):
-        return self._lookup_stat('rating', [])
+        dd_tag = self._soup.find('dd', class_='rating tags')
+        return dd_tag.get_text(strip=True) if dd_tag else ''
 
     @property
     def fandoms(self):
-        return self._lookup_stat('fandom', [])
+        dd_tag = self._soup.find('dd', class_='fandom tags')
+        if not dd_tag:
+            return []
+        return [a.get_text(strip=True) for a in dd_tag.find_all('a')]
 
     def json(self, *args, **kwargs):
         data = {
