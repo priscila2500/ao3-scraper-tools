@@ -22,6 +22,9 @@ venv/
 .idea/
 
 # Output / databases
-output/
 *.sqlite
 *.db
+
+# Include output folder and .csv files
+!output/
+!output/*.csv
