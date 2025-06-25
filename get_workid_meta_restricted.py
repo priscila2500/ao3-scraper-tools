@@ -44,7 +44,7 @@ from requests.exceptions import ConnectionError
 ## === LOGIN FOR RESTRICTED IDS FUNCTIONS === ##
 # === Credentials ===
 username = ' ' #type username here
-password = ' rr' #type password here
+password = ' ' #type password here
 
 # === Ensure output dir exists ===
 os.makedirs('output', exist_ok=True)
